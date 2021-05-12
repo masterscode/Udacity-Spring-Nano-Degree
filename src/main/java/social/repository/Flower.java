@@ -1,24 +1,28 @@
 package social.repository;
 
-import org.hibernate.annotations.Entity;
+import lombok.Data;
 import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.Nationalized;
 import org.hibernate.annotations.Table;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @Entity
-//@Table(name="")
+@Data
+//@Table(appliesTo = "plant") // not really sure if there is a name props
 public class Flower {
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
 
-    @Column(name = "name")
-    String name;
+    @Nationalized
+    private String name;
 
-    @Column()
-    Double price;
+    @Column(precision = 12, scale = 4)
+    private BigDecimal price;
 
 }

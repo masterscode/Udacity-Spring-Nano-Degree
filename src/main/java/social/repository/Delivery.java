@@ -1,6 +1,8 @@
 package social.repository;
 
 import lombok.Data;
+import org.hibernate.annotations.Nationalized;
+import org.hibernate.annotations.Type;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.Column;
@@ -14,15 +16,18 @@ public class Delivery {
     @javax.persistence.Id
     @GeneratedValue
     @Id
-    Long id;
+    private Long id;
+
+    @Nationalized
+    private String recipientName;
 
     @Column
-    String recipientName;
+    private String address;
 
     @Column
-    String address;
+    private LocalDateTime deliveryTime;
 
-    @Column
-    LocalDateTime deliveryTime;
+    @Type(type="yes_no")
+    private Boolean completed;
 
 }
