@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<style>
+    table {
+        border-collapse: collapse;
+        border: thin solid lightgrey;
+    }
+
+    tr {
+        border-bottom: solid thin lightgrey;
+    }
+
+    th {
+        text-transform: uppercase;
+        padding: 5px 15px;
+        border: none;
+    }
+
+</style>
+<table>
+    <thead>
+        <th>id</th>
+        <th>last name</th>
+        <th>first name</th>
+        <th>gender</th>
+    </thead>
+
+    <!--/*@thymesVar id="allUsers" type="List<social.models.User>"*/-->
+    <!--/*@thymesVar id="user" type="social.models.User"*/-->
+
+    <tr th:each="user : ${allUsers}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.gender}"></td>
+    </tr>
+</table>
+</body>
+</html>
