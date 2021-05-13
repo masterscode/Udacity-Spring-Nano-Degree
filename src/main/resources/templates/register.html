@@ -41,6 +41,8 @@
       <label for = "firstName" class = "col-sm-2 col-form-label">First Name</label>
       <div class = "col-sm-4">
         <input th:field="*{firstName}"  id="firstName" type = "text" class = "form-control" placeholder = "Mandatory">
+        <span class="text-muted" th:errors="*{firstName}"></span>
+
       </div>
     </div>
 
@@ -48,6 +50,7 @@
       <label for = "lastName" class = "col-sm-2 col-form-label mr-0">Last Name</label>
       <div class = "col-sm-4">
         <input th:field="*{lastName}"  id="lastName" type = "text" class = "form-control" placeholder = "5.0 < Number < 10.0">
+        <span class="text-muted" th:errors="*{lastName}"></span>
       </div>
     </div>
 
@@ -55,6 +58,7 @@
       <label for = "gender" class = "col-sm-2 col-form-label mr-0">Gender</label>
       <div class = "col-sm-4">
         <input th:field="*{gender}" id="gender" type = "text" class = "form-control" placeholder = "Male|Female|Or Dead">
+        <span class="text-muted" th:errors="*{gender}"></span>
       </div>
     </div>
 
